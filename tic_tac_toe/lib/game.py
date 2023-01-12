@@ -18,7 +18,6 @@ class Game:
       print("")
       print("Invalid selection. Enter p or q!")
       menu_selection = input("> ").lower()
-      # import pdb; pdb.set_trace()
 
     if menu_selection == 'p':
       print("")
@@ -54,10 +53,11 @@ class Game:
     while True:
       move = input("Enter your move: ")
       while True:
-        if turns.place_x(move):
-          counter += 1
-          break
-        else:
+        try: 
+          if turns.place_x(move):
+            counter += 1
+            break
+        except:
           move = input("Please select again: ")
       if turns.end_of_game(counter):
         break
@@ -66,7 +66,6 @@ class Game:
       print("")
       while True:
         cpu_move = random.sample(['a1', 'a2', 'a3', 'b1', 'b2', 'b3', 'c1', 'c2', 'c3'], 1)[0]
-        # import pdb; pdb.set_trace()
         if turns.place_o(cpu_move):
           counter += 1
           break
@@ -93,10 +92,11 @@ class Game:
     while True:
       move = input(f"{player1.name}, enter your move: ")
       while True:
-        if turns.place_x(move):
-          counter += 1
-          break
-        else:
+        try:
+          if turns.place_x(move):
+            counter += 1
+            break
+        except:
           move = input("Please select again: ")
       if turns.end_of_game(counter):
         break
@@ -105,10 +105,11 @@ class Game:
       print("")
       p2_move = input(f"{player2.name}, enter your move: ")
       while True:
-        if turns.place_o(p2_move):
-          counter += 1
-          break
-        else:
+        try:
+          if turns.place_o(p2_move):
+            counter += 1
+            break
+        except:
           p2_move = input("Please select again: ")
       if turns.end_of_game(counter):
         break

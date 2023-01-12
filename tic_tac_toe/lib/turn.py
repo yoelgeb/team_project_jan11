@@ -24,7 +24,7 @@ class Turn:
       self.board.board[x][y] = "X"
       return True
     else:
-      return False
+      raise Exception
 
   def place_o(self, cell):
     if cell[0] == 'a':
@@ -47,7 +47,7 @@ class Turn:
       self.board.board[x][y] = "O"
       return True
     else:
-      return False
+      raise Exception
 
   def move_is_valid(self, cell, x, y):
     if (cell[0]in["a", "b", "c"]) and (cell[1]in["1", "2", "3"]):

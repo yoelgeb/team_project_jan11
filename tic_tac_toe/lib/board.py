@@ -15,9 +15,3 @@ class Board:
     print(" ".join(self.board['row4']))
     print(" ".join(self.board['row5']))
     print(" ".join(self.board['row6']))
-
-# board = Board()
-
-# import pdb; pdb.set_trace()
-
-# board.make_board()
