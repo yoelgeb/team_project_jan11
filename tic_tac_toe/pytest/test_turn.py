@@ -53,3 +53,13 @@ def test_move_is_valid_false():
   turn.place_o('b2')
   assert turn.move_is_valid('b2', 'row4', 3) == False
   assert turn.move_is_valid('r3', "", "") == False
+
+def test_end_of_game_vertical():
+  board = Board()
+  joseph = Player("Joseph")
+  supriya = Player("Supriya")
+  turn = Turn(board, joseph, supriya)
+  turn.place_o('b2')
+  turn.place_o('b1')
+  turn.place_o('b3')
+  assert turn.end_of_game == True
