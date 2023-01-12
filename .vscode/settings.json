@@ -1,0 +1,6 @@
+{
+  "python.analysis.extraPaths": [
+    "./tic_tac_toe/lib",
+    "./rock_paper_scissor"
+  ]
+}

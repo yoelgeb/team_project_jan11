@@ -1,2 +1,0 @@
-player1 won the game 0 times and player2/computer won 0  game tied 1 times 
-player1 won the game 2 times and player2/computer won 1  game tied 0 times 
