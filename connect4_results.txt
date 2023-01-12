@@ -1,1 +1,0 @@
-Winner of Jan 12, 04:20PM Connect4 game was Player 1. It took them 15 turns.
