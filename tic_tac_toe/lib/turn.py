@@ -1,13 +1,3 @@
-# create turn with number of players
-# place x or o
-# valid move?
-# check to see if ttt or draw
-# switch to next player
-# place x or o
-# valid move?
-# check to see if ttt or draw
-# repeat
-
 import player
 import board
 
@@ -30,7 +20,11 @@ class Turn:
       x = 'row4'
     else:
       x = 'row6'
-    self.board.board[x][y] = "X"
+    if self.move_is_valid(cell, x, y):
+      self.board.board[x][y] = "X"
+      return True
+    else:
+      raise Exception
 
   def place_o(self, cell):
     if cell[0] == 'a':
@@ -51,6 +45,9 @@ class Turn:
       x = ""
     if self.move_is_valid(cell, x, y):
       self.board.board[x][y] = "O"
+      return True
+    else:
+      raise Exception
 
   def move_is_valid(self, cell, x, y):
     if (cell[0]in["a", "b", "c"]) and (cell[1]in["1", "2", "3"]):
