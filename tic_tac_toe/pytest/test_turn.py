@@ -62,4 +62,31 @@ def test_end_of_game_vertical():
   turn.place_o('b2')
   turn.place_o('b1')
   turn.place_o('b3')
-  assert turn.end_of_game == True
+  assert turn.end_of_game(3) == True
+
+def test_end_of_game_horizontal():
+  board = Board()
+  joseph = Player("Joseph")
+  supriya = Player("Supriya")
+  turn = Turn(board, joseph, supriya)
+  turn.place_o('a1')
+  turn.place_o('b1')
+  turn.place_o('c1')
+  assert turn.end_of_game(3) == True
+
+def test_end_of_game_diagonal():
+  board = Board()
+  joseph = Player("Joseph")
+  supriya = Player("Supriya")
+  turn = Turn(board, joseph, supriya)
+  turn.place_x('a1')
+  turn.place_x('b2')
+  turn.place_x('c3')
+  assert turn.end_of_game(3) == True
+
+def test_end_of_game_draw():
+  board = Board()
+  joseph = Player("Joseph")
+  supriya = Player("Supriya")
+  turn = Turn(board, joseph, supriya)
+  assert turn.end_of_game(9) == True
