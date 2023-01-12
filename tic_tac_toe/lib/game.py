@@ -66,9 +66,12 @@ class Game:
       print("")
       while True:
         cpu_move = random.sample(['a1', 'a2', 'a3', 'b1', 'b2', 'b3', 'c1', 'c2', 'c3'], 1)[0]
-        if turns.place_o(cpu_move):
-          counter += 1
-          break
+        try:
+          if turns.place_o(cpu_move):
+            counter += 1
+            break
+        except: 
+          cpu_move = random.sample(['a1', 'a2', 'a3', 'b1', 'b2', 'b3', 'c1', 'c2', 'c3'], 1)[0]
       if turns.end_of_game(counter):
         break
       print("")
