@@ -125,16 +125,19 @@ class Game:
     print("")
     if counter == 9:
       print("Draw!!")
+      x = "Draw"
     elif (counter % 2 == 0) and (type == "pvc"):
       print("I win!")
+      x = "Computer win"
     elif (counter % 2 == 0) and (type == "pvp"):
       print(f"{p2_name} wins!!")
+      x = "Player 2 win"
     else:
       print(f"{p1_name} wins!!")
+      x = "Player 1 win"
+    with open("winners.csv", "at") as file:
+      file.write(f"{x}, {counter} moves\n")
     self.main_menu()
 
-
-game = Game()
-game.main_menu()
 
 
