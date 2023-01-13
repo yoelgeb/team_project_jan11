@@ -9,17 +9,17 @@ class Turn:
 
   def place_x(self, cell):
     if cell[0] == 'a':
-      y = 1
-    elif cell[0] == 'b':
-      y = 3
-    else:
-      y = 5
-    if cell[1] == '1':
       x = 'row2'
-    elif cell[1] == '2':
+    elif cell[0] == 'b':
       x = 'row4'
     else:
       x = 'row6'
+    if cell[1] == '1':
+      y = 1
+    elif cell[1] == '2':
+      y = 3
+    else:
+      y = 5
     if self.move_is_valid(cell, x, y):
       self.board.board[x][y] = "X"
       return True
@@ -28,21 +28,17 @@ class Turn:
 
   def place_o(self, cell):
     if cell[0] == 'a':
-      y = 1
-    elif cell[0] == 'b':
-      y = 3
-    elif cell[0] == 'c':
-      y = 5
-    else:
-      y = ""
-    if cell[1] == '1':
       x = 'row2'
-    elif cell[1] == '2':
+    elif cell[0] == 'b':
       x = 'row4'
-    elif cell[1] == '3':
-      x = 'row6'
     else:
-      x = ""
+      x = 'row6'
+    if cell[1] == '1':
+      y = 1
+    elif cell[1] == '2':
+      y = 3
+    else:
+      y = 5
     if self.move_is_valid(cell, x, y):
       self.board.board[x][y] = "O"
       return True
